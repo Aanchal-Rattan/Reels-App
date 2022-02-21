@@ -6,20 +6,32 @@ import Login from './Components/Login'
 import {
   Routes,
   Route,
- 
-} from "react-router-dom";
 
+} from "react-router-dom";
+import AuthProvider from './Context/AuthContext'
+import Feed from './Components/Feed'
+// import PrivateRoute from './Components/PrivateRoute';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login />}/>
-        <Route path="/signup" element={<Signup />}/>
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/" element={<Feed />} />
 
+         
 
-
+          {/* <Route path="/private" element={
+            <PrivateRoute>
+              <Private/>
+            </PrivateRoute>
+          }/> */}
+            
+         
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
 
   );
