@@ -11,6 +11,7 @@ import {
 import AuthProvider from './Context/AuthContext'
 import Feed from './Components/Feed'
 // import PrivateRoute from './Components/PrivateRoute';
+import Profile from './Components/Profile'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/profile/:id" element={<Profile />} />
           <Route path="/" element={<Feed />} />
 
          
