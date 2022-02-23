@@ -12,7 +12,6 @@ function Like({userData,postData}) {
         setLike(check)
     }, [postData,userData])
 
-    
     const handleLike = () => {
         if(like == true){
             let narr = postData.likes.filter((el)=>el!=userData.userData.userId)
