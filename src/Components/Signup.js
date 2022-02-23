@@ -65,6 +65,7 @@ export default function Signup() {
                         profileUrl: url,
                         createAt: database.getTimeStamp()
                     })
+
                 })
                 setLoading(false);
                navigate('/');
