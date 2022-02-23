@@ -95,7 +95,7 @@ function Profile() {
                                                             <Card className="card1" style={{ padding: '1rem' }}>
                                                                 <Comments postData={post} />
                                                             </Card>
-                                                            <Card variant="outlined" className="card2">
+                                                            <Card variant="outlined" className="card2" style={{ paddingBottom: '13%' }}>
                                                                 <Typography style={{ padding: '0.4rem' }}>{post.likes.length == 0 ? '' : `Liked by ${post.likes.length} users`}</Typography>
                                                                 <div style={{ display: 'flex' }}>
                                                                     <Like2 postData={post} userData={userData} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} />

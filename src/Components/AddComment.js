@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import { database } from '../firebase';
 
 function AddComment({userData,postData}) {
-    console.log(userData.userData.fullName)
+    // console.log(userData.userData.fullName)
     const [text,setText] = useState('')
     const handleClick = () => {
         let obj = {
