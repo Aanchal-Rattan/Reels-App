@@ -25,7 +25,7 @@ import ExploreIcon from '@mui/icons-material/Explore';
 import Avatar from '@mui/material/Avatar'
 
 export default function Navbar({userData}) {
-    // console.log(userData.pUrl)
+    console.log(userData)
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
     const isMenuOpen = Boolean(anchorEl);
@@ -51,7 +51,7 @@ export default function Navbar({userData}) {
     };
 
     const handleprofile = () => {
-        navigate(`/profile/${userData.uid}`)
+        navigate(`/profile/${userData.userId}`)
     }
 
     const handlelogout = async() => {
@@ -64,7 +64,7 @@ export default function Navbar({userData}) {
     }
 
     const handleexplore = () => {
-      let win = window.open('https://www.nados.pepcoding.com', '_blank');
+      let win = window.open('https://nados.pepcoding.com/feed', '_blank');
       win.focus();
     }
 

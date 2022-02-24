@@ -8,13 +8,13 @@ function Like({userData,postData}) {
     const [like, setLike] = useState(null);
     // console.log(database.posts.doc(postData.postId))
     useEffect(() => {
-        let check = postData?.likes.includes(userData.userData.userId) ? true : false
+        let check = postData?.likes.includes(userData.userId) ? true : false
         setLike(check)
     }, [postData,userData])
 
     const handleLike = () => {
         if(like == true){
-            let narr = postData.likes.filter((el)=>el!=userData.userData.userId)
+            let narr = postData.likes.filter((el)=>el!=userData.userId)
             // console.log(narr)
 
             database.posts.doc(postData.postId).update({
@@ -22,7 +22,7 @@ function Like({userData,postData}) {
 
             })
         }else{
-            let narr = [...postData.likes,userData.userData.userId]
+            let narr = [...postData.likes,userData.userId]
             database.posts.doc(postData.postId).update({
                 likes:narr
 

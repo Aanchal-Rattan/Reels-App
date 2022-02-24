@@ -9,8 +9,8 @@ function AddComment({userData,postData}) {
     const handleClick = () => {
         let obj = {
             text:text,
-            uProfileImage:userData.userData.profileUrl,
-            uName : userData.userData.fullName
+            uProfileImage:userData.profileUrl,
+            uName : userData.fullName
         }
         database.comments.add(obj).then((doc)=>{
             database.posts.doc(postData.postId).update({

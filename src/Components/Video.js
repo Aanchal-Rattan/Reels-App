@@ -1,6 +1,6 @@
 import React from 'react'
 import './Video.css'
-import  ReactDOM  from 'react';
+import  ReactDOM  from 'react-dom';
 
 function Video(props) {
     const handleClick = (e) => {

@@ -10,8 +10,9 @@ import {
 } from "react-router-dom";
 import AuthProvider from './Context/AuthContext'
 import Feed from './Components/Feed'
-// import PrivateRoute from './Components/PrivateRoute';
+import PrivateRoute from './Components/PrivateRoute';
 import Profile from './Components/Profile'
+import Ioa from './Components/Ioa'
 
 function App() {
   return (
@@ -21,20 +22,16 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/profile/:id" element={<Profile />} />
-          <Route path="/" element={<Feed />} />
-
-         
-
-          {/* <Route path="/private" element={
+          <Route path="/" element={
             <PrivateRoute>
-              <Private/>
+              <Feed/>
             </PrivateRoute>
-          }/> */}
-            
-         
+          } />
+   
         </Routes>
       </AuthProvider>
     </BrowserRouter>
+    // <Ioa/>
 
   );
 }

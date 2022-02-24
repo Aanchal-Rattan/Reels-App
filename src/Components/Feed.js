@@ -10,6 +10,7 @@ function Feed() {
     const [userData,setUserData] = useState('')
     console.log(user);
     useEffect(()=>{
+        
         const unsub = database.users.doc(user?.uid).onSnapshot((snapshot)=>{
             setUserData(snapshot.data())
         })

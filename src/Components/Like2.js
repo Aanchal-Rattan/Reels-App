@@ -3,6 +3,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { database } from '../firebase';
 
 function Like({userData,postData}) {
+    console.log(userData)
     const [like,setLike] = useState(null);
     useEffect(()=>{
         let check = postData.likes.includes(userData.userId)?true:false
@@ -11,11 +12,14 @@ function Like({userData,postData}) {
     const handleLike = () => {
         if(like==true){
             let narr = postData.likes.filter((el)=>el!=userData.userId)
+            console.log(narr)
             database.posts.doc(postData.postId).update({
                 likes:narr
             })
         }else{
             let narr = [...postData.likes,userData.userId]
+            console.log(narr)
+
             database.posts.doc(postData.postId).update({
                 likes:narr
             })

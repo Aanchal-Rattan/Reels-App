@@ -15,7 +15,7 @@ import Comments from './Comments'
 
 
 
-function Posts(userData) {
+function Posts({userData}) {
     const [posts, setPosts] = useState(null);
     const [open, setOpen] = useState(null);
 
@@ -38,6 +38,30 @@ function Posts(userData) {
         })
         return unsub
     }, [])
+
+    const callback = (entries) => {
+        entries.forEach((entry) => {
+            let ele = entry.target.childNodes[0]
+            console.log(ele)
+            ele.play().then(() => {
+                if(!ele.paused && !entry.isIntersecting){
+                    ele.pause()
+                }
+            })
+        })
+    }
+    let observer = new IntersectionObserver(callback, {threshold: 0.6});
+    useEffect(() => {
+        const elements = document.querySelectorAll(".videos")
+        elements.forEach((element) => {
+            observer.observe(element)
+        })
+        return () => {
+            observer.disconnect();
+        }
+    }, [posts])
+
+    
     return (
         <div>
             {
